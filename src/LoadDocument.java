@@ -11,7 +11,7 @@ public class LoadDocument {
 	
 	public ArrayList<Entities> entities;
 	
-	LoadDocument (CSVReader reader)
+	LoadDocument (CSVReader reader, String classStr)
 	{
 		String [] nextLine;
 		entities = new ArrayList<>();
@@ -36,7 +36,7 @@ public class LoadDocument {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-	    
+	    decodeEntities(classStr);
 	    numberOfAtributes = entities.size();
 	}
 	
@@ -55,5 +55,32 @@ public class LoadDocument {
 		  System.err.println("Error: " + e.getMessage());
 		  }
 	}
-	
+
+	private void decodeEntities(String classStr) {
+		if(classStr.equals("BL")) {
+			for(int i = 0; i < entities.size(); i++) {
+				entities.set(i, PreprocessStrings.replaceMissingValuesBL(entities.get(i)));
+			}
+		} else if (classStr.equals("MG")) {
+			for(int i = 0; i < entities.size(); i++) {
+				entities.set(i, PreprocessStrings.replaceMissingValuesMG(entities.get(i)));
+			}
+		} else if (classStr.equals("SSL")) {
+			for(int i = 0; i < entities.size(); i++) {
+				entities.set(i, PreprocessStrings.replaceMissingValuesSSL(entities.get(i)));
+			}
+		} else if (classStr.equals("TEX")) {
+			for(int i = 0; i < entities.size(); i++) {
+				entities.set(i, PreprocessStrings.replaceMissingValuesTEX(entities.get(i)));
+			}
+		} else if (classStr.equals("TTT")) {
+			for(int i = 0; i < entities.size(); i++) {
+				entities.set(i, PreprocessStrings.replaceMissingValuesTTT(entities.get(i)));
+			}
+		} else if (classStr.equals("WL")) {
+			for(int i = 0; i < entities.size(); i++) {
+				entities.set(i, PreprocessStrings.replaceMissingValuesWL(entities.get(i)));
+			}
+		}
+	}
 }

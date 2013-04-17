@@ -19,7 +19,7 @@ public class Main {
 			e.printStackTrace();
 		}
 		//new LoadDocument(reader);
-		Weka weka = new Weka(new LoadDocument(reader).entities);
+		Weka weka = new Weka(new LoadDocument(reader, "").entities);
 		//DataStore store =new DataStore(new LoadDocument(reader));
 	}
 
