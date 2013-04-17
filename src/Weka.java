@@ -1,4 +1,7 @@
+import java.io.BufferedOutputStream;
 import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.util.ArrayList;
 
@@ -13,7 +16,7 @@ import weka.core.Instances;
 public class Weka {
 	ArrayList<Entities> entities;
 
-	Weka(ArrayList<Entities> entities) {
+	Weka(ArrayList<Entities> entities, String tmp) {
 		this.entities = new ArrayList<>(entities);
 
 		FastVector fvWekaAttributes = new FastVector(this.entities.size()-1);
@@ -38,7 +41,7 @@ public class Weka {
 			}
 			isTrainingSet.add(iExample);
 		}
-		isTrainingSet.setClassIndex(0);
+		isTrainingSet.setClassIndex(1);
 		Classifier cModel = (Classifier) new NaiveBayes();
 		try {
 			cModel.buildClassifier(isTrainingSet);
@@ -47,36 +50,25 @@ public class Weka {
 			e.printStackTrace();
 		}
 
-		Evaluation eTest;
+		Evaluation eval;
 		try {
-			eTest = new Evaluation(isTrainingSet);
+			eval = new Evaluation(isTrainingSet);
 
-			eTest.evaluateModel(cModel, isTrainingSet);
-
-			// Print the result à la Weka explorer:
-			String strSummary = eTest.toSummaryString();
-			System.out.println(strSummary);
-
-			// Get the confusion matrix
+			//eval.evaluateModel(cModel, isTrainingSet);
 			
-			try{
-				 FileWriter fstream = new FileWriter("test.txt");
-				  BufferedWriter outFile = new BufferedWriter(fstream);
-
-
-			
-			double[][] cmMatrix = eTest.confusionMatrix();
-			for (int row_i = 0; row_i < cmMatrix.length; row_i++) {
-				for (int col_i = 0; col_i < cmMatrix.length; col_i++) {
-					outFile.write(String.valueOf(cmMatrix[row_i][col_i]));
-					outFile.write("|");
-				}
-				outFile.write("\n");
-			}
-			  outFile.close();
-			  }catch (Exception e){//Catch exception if any
-			  System.err.println("Error: " + e.getMessage());
-			  }
+			  System.out.print("Evaluating testing set...");
+			  System.out.println("Writing predictions to predictions.txt");
+			  File f = new File("predictions_"+ tmp+ ".txt");
+			  BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(f));
+			  bos.write(("inst#" + "\t" + "actual" + "\t" + "predicted" + "\t" + "error\n").getBytes());
+			   for (int i = 0; i < isTrainingSet.numInstances(); i++) {
+			     double pred =  eval.evaluateModelOnce(cModel, isTrainingSet.instance(i));
+			     double val =  isTrainingSet.instance(i).classValue();
+			     double error = pred - val;
+			     bos.write((i + "\t" + val + "\t" + pred + "\t" + error + "\n").getBytes());
+			    }
+			   System.out.println("done.\n");
+			  System.out.println(eval.toSummaryString("\nResults\n======\n", true));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

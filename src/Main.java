@@ -21,7 +21,7 @@ public class Main {
         }
         for (LoadDocument doc : newGroups.documents)
         {
-                Weka weka = new Weka(doc.entities);
+                Weka weka = new Weka(doc.entities,Integer.toString(newGroups.documents.indexOf(doc)));
         }
 		//DataStore store =new DataStore(new LoadDocument(reader));
 	}

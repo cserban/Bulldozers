@@ -21,7 +21,7 @@ public class LoadDocument {
 	    	nextLine = reader.readNext();
 			for (int i = 0 ; i< nextLine.length; i++)
 	    	{
-				if (Arrays.asList(constant).contains(Integer.toString(i)))
+				if (Arrays.asList(constant).contains(Integer.toString(i+1)))
 				{
 					entities.add(new Entities(nextLine[i]));
 				}
@@ -31,7 +31,7 @@ public class LoadDocument {
 	    		int j = 0;
 				for (int i = 0 ; i< nextLine.length; i++)
 		    	{
-					if (Arrays.asList(constant).contains(Integer.toString(i)))
+					if (Arrays.asList(constant).contains(Integer.toString(i+1)))
 					{
 					String s = new String(nextLine[i]);
 					if (s.length() == 0)
@@ -47,6 +47,15 @@ public class LoadDocument {
 		}
 	    decodeEntities(classStr);
 	    numberOfAtributes = entities.size();
+	    
+
+	    for (Entities entitie : entities)
+	    {
+	    	if (entitie.name.equals("YearMade"))
+	    	{
+	    		new PreprocessOutliers(entitie);
+	    	}
+	    }
 	}
 	
 	void printToFile(String out)
