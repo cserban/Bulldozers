@@ -182,7 +182,7 @@ public class PreprocessStrings {
 		if(productClass.equalsIgnoreCase("Track - 300.0 + Metric Tons"))
 			return "22";
 
-		System.out.println("HAHA " + productClass);
+		System.out.println("HAHA >" + productClass+"<");
 		return "-1";
 	}
 
@@ -559,6 +559,8 @@ public class PreprocessStrings {
 		if(!entity.domain.contains(repl) && repl.length() > 0) {
 			entity.domain.add(repl);
 		}
+		entity.domain.remove(orig);
+		entity.domain.remove(" " + orig);
 		return entity;
 	}
 
@@ -935,11 +937,11 @@ public class PreprocessStrings {
 
 	public static Entities replaceMissingValuesTEX(Entities entity) {
 		if (entity.name.equalsIgnoreCase("fiProductClassDesc")) {
-			entity = replaceString(entity, "?", "Skid Steer Loader - Unidentified");
-			entity = replaceString(entity, "Track - Unidentified (Compact Construction)", "Skid Steer Loader - Unidentified");
+			entity = replaceString(entity, "?", "Track - Unidentified");
+			entity = replaceString(entity, "Track - Unidentified (Compact Construction)", "Track - Unidentified");
 			entity = replaceString(entity, "Track - 4.0 to 6.0 Metric Tons", "Track - 5.0 to 6.0 Metric Tons");
 			for(int i = 0; i < entity.values.size(); i++) {
-				entity.values.set(i, decodeProductClassTEX(entity.values.get(i)));
+				entity.values.set(i, decodeProductClassTEX(entity.values.get(i).trim()));
 			}
 			Set<String> domain = new TreeSet<String>();
 			for(String str : entity.domain) {
