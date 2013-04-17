@@ -205,7 +205,7 @@ public class PreprocessStrings {
 			return "7";
 		if(productClass.equalsIgnoreCase("Dozer - 260.0 + Horsepower"))
 			return "8";
-		System.out.println("HAHA " + productClass);
+		System.out.println("HAHA >" + productClass+"<");
 		return "-1";
 	}
 
@@ -851,6 +851,7 @@ public class PreprocessStrings {
 	public static Entities replaceMissingValuesBL(Entities entity) {
 		if (entity.name.equalsIgnoreCase("fiProductClassDesc")) {
 			for(int i = 0; i < entity.values.size(); i++) {
+				entity.values.set(i,entity.values.get(i).trim());
 				entity.values.set(i, decodeProductClassBL(entity.values.get(i)));
 			}
 			Set<String> domain = new TreeSet<String>();
@@ -877,6 +878,7 @@ public class PreprocessStrings {
 	public static Entities replaceMissingValuesMG(Entities entity) {
 		if (entity.name.equalsIgnoreCase("fiProductClassDesc")) {
 			for(int i = 0; i < entity.values.size(); i++) {
+				entity.values.set(i,entity.values.get(i).trim());
 				entity.values.set(i, decodeProductClassMG(entity.values.get(i)));
 			}
 			Set<String> domain = new TreeSet<String>();
@@ -959,6 +961,7 @@ public class PreprocessStrings {
 	public static Entities replaceMissingValuesTTT(Entities entity) {
 		if (entity.name.equalsIgnoreCase("fiProductClassDesc")) {
 			for(int i = 0; i < entity.values.size(); i++) {
+				entity.values.set(i,entity.values.get(i).trim());
 				entity.values.set(i, decodeProductClassTTT(entity.values.get(i)));
 			}
 			Set<String> domain = new TreeSet<String>();
@@ -971,6 +974,7 @@ public class PreprocessStrings {
 		if (entity.name.equalsIgnoreCase("ProductSize")) {
 			entity = replaceString(entity, "?", "None or Unspecified");
 			for(int i = 0; i < entity.values.size(); i++) {
+				entity.values.set(i,entity.values.get(i).trim());
 				entity.values.set(i, decodeProductSize(entity.values.get(i)));
 			}
 			Set<String> domain = new TreeSet<String>();
@@ -985,6 +989,7 @@ public class PreprocessStrings {
 	public static Entities replaceMissingValuesWL(Entities entity) {
 		if (entity.name.equalsIgnoreCase("fiProductClassDesc")) {
 			for(int i = 0; i < entity.values.size(); i++) {
+				entity.values.set(i,entity.values.get(i).trim());
 				entity.values.set(i, decodeProductClassWL(entity.values.get(i)));
 			}
 			Set<String> domain = new TreeSet<String>();
