@@ -120,16 +120,18 @@ public class PreprocessStrings {
 	}
 
 	public static String decodeProductClassMG(String productClass) {
-		if(productClass.equalsIgnoreCase("Motorgrader - 45.0 to 130.0 Horsepower"))
+		if(productClass.equalsIgnoreCase("Motorgrader - Unidentified"))
 			return "0";
-		if(productClass.equalsIgnoreCase("Motorgrader - 130.0 to 145.0 Horsepower"))
+		if(productClass.equalsIgnoreCase("Motorgrader - 45.0 to 130.0 Horsepower"))
 			return "1";
-		if(productClass.equalsIgnoreCase("Motorgrader - 145.0 to 170.0 Horsepower"))
+		if(productClass.equalsIgnoreCase("Motorgrader - 130.0 to 145.0 Horsepower"))
 			return "2";
-		if(productClass.equalsIgnoreCase("Motorgrader - 170.0 to 200.0 Horsepower"))
+		if(productClass.equalsIgnoreCase("Motorgrader - 145.0 to 170.0 Horsepower"))
 			return "3";
-		if(productClass.equalsIgnoreCase("Motorgrader - 200.0 + Horsepower"))
+		if(productClass.equalsIgnoreCase("Motorgrader - 170.0 to 200.0 Horsepower"))
 			return "4";
+		if(productClass.equalsIgnoreCase("Motorgrader - 200.0 + Horsepower"))
+			return "5";
 		System.out.println("HAHA " + productClass);
 		return "-1";
 	}
