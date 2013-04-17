@@ -856,6 +856,7 @@ public class PreprocessStrings {
 			}
 			Set<String> domain = new TreeSet<String>();
 			for(String str : entity.domain) {
+				str = str.trim();
 				domain.add(decodeProductClassBL(str));
 			}
 			entity.domain = domain;
@@ -868,6 +869,7 @@ public class PreprocessStrings {
 			}
 			Set<String> domain = new TreeSet<String>();
 			for(String str : entity.domain) {
+				str = str.trim();
 				domain.add(decodeProductSize(str));
 			}
 			entity.domain = domain;
@@ -883,6 +885,7 @@ public class PreprocessStrings {
 			}
 			Set<String> domain = new TreeSet<String>();
 			for(String str : entity.domain) {
+				str = str.trim();
 				domain.add(decodeProductClassMG(str));
 			}
 			entity.domain = domain;
@@ -910,6 +913,7 @@ public class PreprocessStrings {
 			}
 			Set<String> domain = new TreeSet<String>();
 			for(String str : entity.domain) {
+				str = str.trim();
 				domain.add(decodeProductClassSSL(str));
 			}
 			entity.domain = domain;
@@ -939,6 +943,7 @@ public class PreprocessStrings {
 			}
 			Set<String> domain = new TreeSet<String>();
 			for(String str : entity.domain) {
+				str = str.trim();
 				domain.add(decodeProductClassTEX(str));
 			}
 			entity.domain = domain;
@@ -966,6 +971,7 @@ public class PreprocessStrings {
 			}
 			Set<String> domain = new TreeSet<String>();
 			for(String str : entity.domain) {
+				str = str.trim();
 				domain.add(decodeProductClassTTT(str));
 			}
 			entity.domain = domain;
@@ -994,6 +1000,7 @@ public class PreprocessStrings {
 			}
 			Set<String> domain = new TreeSet<String>();
 			for(String str : entity.domain) {
+				str = str.trim();
 				domain.add(decodeProductClassWL(str));
 			}
 			entity.domain = domain;
@@ -1006,6 +1013,7 @@ public class PreprocessStrings {
 			}
 			Set<String> domain = new TreeSet<String>();
 			for(String str : entity.domain) {
+				str = str.trim();
 				domain.add(decodeProductSize(str));
 			}
 			entity.domain = domain;
