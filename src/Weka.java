@@ -67,6 +67,7 @@ public class Weka {
 			     double error = pred - val;
 			     bos.write((i + "\t" + val + "\t" + pred + "\t" + error + "\n").getBytes());
 			    }
+			   bos.close();
 			   System.out.println("done.\n");
 			  System.out.println(eval.toSummaryString("\nResults\n======\n", true));
 		} catch (Exception e) {
