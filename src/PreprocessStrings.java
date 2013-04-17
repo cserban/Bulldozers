@@ -564,7 +564,7 @@ public class PreprocessStrings {
 
 	public static Entities replaceMissingValues(Entities entity){
 		if (entity.name.equalsIgnoreCase("Drive_System")) {
-			entity = replaceString(entity, "", "None or Unspecified");
+			entity = replaceString(entity, "?", "None or Unspecified");
 			for(int i = 0; i < entity.values.size(); i++) {
 				entity.values.set(i, decodeDriveSystem(entity.values.get(i)));
 			}
@@ -574,7 +574,7 @@ public class PreprocessStrings {
 			}
 			entity.domain = domain;
 		} else if (entity.name.equalsIgnoreCase("Enclosure")) {
-			entity = replaceString(entity, "", "None or Unspecified");
+			entity = replaceString(entity, "?", "None or Unspecified");
 			entity = replaceString(entity, "EROPS w AC", "EROPS AC");
 			for(int i = 0; i < entity.values.size(); i++) {
 				entity.values.set(i, decodeEnclosure(entity.values.get(i)));
@@ -585,7 +585,7 @@ public class PreprocessStrings {
 			}
 			entity.domain = domain;
 		} else if (entity.name.equalsIgnoreCase("Forks")) {
-			entity = replaceString(entity, "", "None or Unspecified");
+			entity = replaceString(entity, "?", "None or Unspecified");
 			for(int i = 0; i < entity.values.size(); i++) {
 				entity.values.set(i, decodeForks(entity.values.get(i)));
 			}
@@ -595,7 +595,7 @@ public class PreprocessStrings {
 			}
 			entity.domain = domain;
 		} else if (entity.name.equalsIgnoreCase("Pad_Type")) {
-			entity = replaceString(entity, "", "None or Unspecified");
+			entity = replaceString(entity, "?", "None or Unspecified");
 			for(int i = 0; i < entity.values.size(); i++) {
 				entity.values.set(i, decodePadType(entity.values.get(i)));
 			}
@@ -605,7 +605,7 @@ public class PreprocessStrings {
 			}
 			entity.domain = domain;
 		}  else if (entity.name.equalsIgnoreCase("Stick")) {
-			entity = replaceString(entity, "", "None or Unspecified");
+			entity = replaceString(entity, "?", "None or Unspecified");
 			for(int i = 0; i < entity.values.size(); i++) {
 				entity.values.set(i, decodeStick(entity.values.get(i)));
 			}
@@ -615,7 +615,7 @@ public class PreprocessStrings {
 			}
 			entity.domain = domain;
 		}  else if (entity.name.equalsIgnoreCase("Ride_Control")) {
-			entity = replaceString(entity, "", "None or Unspecified");
+			entity = replaceString(entity, "?", "None or Unspecified");
 			for(int i = 0; i < entity.values.size(); i++) {
 				entity.values.set(i, decodeRideControl(entity.values.get(i)));
 			}
@@ -625,7 +625,7 @@ public class PreprocessStrings {
 			}
 			entity.domain = domain;
 		}  else if (entity.name.equalsIgnoreCase("Transmission")) {
-			entity = replaceString(entity, "", "None or Unspecified");
+			entity = replaceString(entity, "?", "None or Unspecified");
 			for(int i = 0; i < entity.values.size(); i++) {
 				entity.values.set(i, decodeTransmission(entity.values.get(i)));
 			}
@@ -635,7 +635,7 @@ public class PreprocessStrings {
 			}
 			entity.domain = domain;
 		} else if (entity.name.equalsIgnoreCase("Turbocharged")) {
-			entity = replaceString(entity, "", "None or Unspecified");
+			entity = replaceString(entity, "?", "None or Unspecified");
 			for(int i = 0; i < entity.values.size(); i++) {
 				entity.values.set(i, decodeTurbocharger(entity.values.get(i)));
 			}
@@ -645,7 +645,7 @@ public class PreprocessStrings {
 			}
 			entity.domain = domain;
 		} else if (entity.name.equalsIgnoreCase("Blade_Extension")) {
-			entity = replaceString(entity, "", "None or Unspecified");
+			entity = replaceString(entity, "?", "None or Unspecified");
 			for(int i = 0; i < entity.values.size(); i++) {
 				entity.values.set(i, decodeBladeExtension(entity.values.get(i)));
 			}
@@ -655,7 +655,7 @@ public class PreprocessStrings {
 			}
 			entity.domain = domain;
 		} else if (entity.name.equalsIgnoreCase("Hydraulics")) {
-			entity = replaceString(entity, "", "None or Unspecified");
+			entity = replaceString(entity, "?", "None or Unspecified");
 			for(int i = 0; i < entity.values.size(); i++) {
 				entity.values.set(i, decodeHydraulisc(entity.values.get(i)));
 			}
@@ -665,7 +665,7 @@ public class PreprocessStrings {
 			}
 			entity.domain = domain;
 		} else if (entity.name.equalsIgnoreCase("Pushblock")) {
-			entity = replaceString(entity, "", "None or Unspecified");
+			entity = replaceString(entity, "?", "None or Unspecified");
 			for(int i = 0; i < entity.values.size(); i++) {
 				entity.values.set(i, decodePushBlock(entity.values.get(i)));
 			}
@@ -675,7 +675,7 @@ public class PreprocessStrings {
 			}
 			entity.domain = domain;
 		}  else if (entity.name.equalsIgnoreCase("Ripper")) {
-			entity = replaceString(entity, "", "None or Unspecified");
+			entity = replaceString(entity, "?", "None or Unspecified");
 			for(int i = 0; i < entity.values.size(); i++) {
 				entity.values.set(i, decodeRipper(entity.values.get(i)));
 			}
@@ -685,7 +685,7 @@ public class PreprocessStrings {
 			}
 			entity.domain = domain;
 		} else if (entity.name.equalsIgnoreCase("Scarifier")) {
-			entity = replaceString(entity, "", "None or Unspecified");
+			entity = replaceString(entity, "?", "None or Unspecified");
 			for(int i = 0; i < entity.values.size(); i++) {
 				entity.values.set(i, decodeScarifier(entity.values.get(i)));
 			}
@@ -695,7 +695,7 @@ public class PreprocessStrings {
 			}
 			entity.domain = domain;
 		} else if (entity.name.equalsIgnoreCase("Tip_Control")) {
-			entity = replaceString(entity, "", "None or Unspecified");
+			entity = replaceString(entity, "?", "None or Unspecified");
 			for(int i = 0; i < entity.values.size(); i++) {
 				entity.values.set(i, decodeTipControl(entity.values.get(i)));
 			}
@@ -705,7 +705,7 @@ public class PreprocessStrings {
 			}
 			entity.domain = domain;
 		}else if (entity.name.equalsIgnoreCase("Enclosure_Type")) {
-			entity = replaceString(entity, "", "None or Unspecified");
+			entity = replaceString(entity, "?", "None or Unspecified");
 			for(int i = 0; i < entity.values.size(); i++) {
 				entity.values.set(i, decodeEnclosureType(entity.values.get(i)));
 			}
@@ -715,7 +715,7 @@ public class PreprocessStrings {
 			}
 			entity.domain = domain;
 		}  else if (entity.name.equalsIgnoreCase("Engine_Horsepower")) {
-			entity = replaceString(entity, "", "None or Unspecified");
+			entity = replaceString(entity, "?", "None or Unspecified");
 			for(int i = 0; i < entity.values.size(); i++) {
 				entity.values.set(i, decodeEngineHorsepower(entity.values.get(i)));
 			}
@@ -725,7 +725,7 @@ public class PreprocessStrings {
 			}
 			entity.domain = domain;
 		}  else if (entity.name.equalsIgnoreCase("Coupler")) {
-			entity = replaceString(entity, "", "None or Unspecified");
+			entity = replaceString(entity, "?", "None or Unspecified");
 			for(int i = 0; i < entity.values.size(); i++) {
 				entity.values.set(i, decodeCoupler(entity.values.get(i)));
 			}
@@ -735,7 +735,7 @@ public class PreprocessStrings {
 			}
 			entity.domain = domain;
 		} else if (entity.name.equalsIgnoreCase("Coupler_System")) {
-			entity = replaceString(entity, "", "None or Unspecified");
+			entity = replaceString(entity, "?", "None or Unspecified");
 			for(int i = 0; i < entity.values.size(); i++) {
 				entity.values.set(i, decodeCouplerSystem(entity.values.get(i)));
 			}
@@ -745,7 +745,7 @@ public class PreprocessStrings {
 			}
 			entity.domain = domain;
 		}  else if (entity.name.equalsIgnoreCase("Grouser_Tracks")) {
-			entity = replaceString(entity, "", "None or Unspecified");
+			entity = replaceString(entity, "?", "None or Unspecified");
 			for(int i = 0; i < entity.values.size(); i++) {
 				entity.values.set(i, decodeGrouserTracks(entity.values.get(i)));
 			}
@@ -755,7 +755,7 @@ public class PreprocessStrings {
 			}
 			entity.domain = domain;
 		} else if (entity.name.equalsIgnoreCase("Hydraulics_Flow")) {
-			entity = replaceString(entity, "", "None or Unspecified");
+			entity = replaceString(entity, "?", "None or Unspecified");
 			for(int i = 0; i < entity.values.size(); i++) {
 				entity.values.set(i, decodeHydraulicsFlow(entity.values.get(i)));
 			}
@@ -765,7 +765,7 @@ public class PreprocessStrings {
 			}
 			entity.domain = domain;
 		}  else if (entity.name.equalsIgnoreCase("Track_Type")) {
-			entity = replaceString(entity, "", "None or Unspecified");
+			entity = replaceString(entity, "?", "None or Unspecified");
 			for(int i = 0; i < entity.values.size(); i++) {
 				entity.values.set(i, decodeTrackType(entity.values.get(i)));
 			}
@@ -775,7 +775,7 @@ public class PreprocessStrings {
 			}
 			entity.domain = domain;
 		} else if (entity.name.equalsIgnoreCase("Thumb")) {
-			entity = replaceString(entity, "", "None or Unspecified");
+			entity = replaceString(entity, "?", "None or Unspecified");
 			for(int i = 0; i < entity.values.size(); i++) {
 				entity.values.set(i, decodeThum(entity.values.get(i)));
 			}
@@ -785,7 +785,7 @@ public class PreprocessStrings {
 			}
 			entity.domain = domain;
 		} else if (entity.name.equalsIgnoreCase("Pattern_Changer")) {
-			entity = replaceString(entity, "", "None or Unspecified");
+			entity = replaceString(entity, "?", "None or Unspecified");
 			for(int i = 0; i < entity.values.size(); i++) {
 				entity.values.set(i, decodePatternChanger(entity.values.get(i)));
 			}
@@ -795,7 +795,7 @@ public class PreprocessStrings {
 			}
 			entity.domain = domain;
 		} else if (entity.name.equalsIgnoreCase("Grouser_Type")) {
-			entity = replaceString(entity, "", "None or Unspecified");
+			entity = replaceString(entity, "?", "None or Unspecified");
 			for(int i = 0; i < entity.values.size(); i++) {
 				entity.values.set(i, decodeGrouserType(entity.values.get(i)));
 			}
@@ -805,7 +805,7 @@ public class PreprocessStrings {
 			}
 			entity.domain = domain;
 		} else if (entity.name.equalsIgnoreCase("Blade_Type")) {
-			entity = replaceString(entity, "", "None or Unspecified");
+			entity = replaceString(entity, "?", "None or Unspecified");
 			for(int i = 0; i < entity.values.size(); i++) {
 				entity.values.set(i, decodeBladeType(entity.values.get(i)));
 			}
@@ -815,7 +815,7 @@ public class PreprocessStrings {
 			}
 			entity.domain = domain;
 		} else if (entity.name.equalsIgnoreCase("Travel_Controls")) {
-			entity = replaceString(entity, "", "None or Unspecified");
+			entity = replaceString(entity, "?", "None or Unspecified");
 			for(int i = 0; i < entity.values.size(); i++) {
 				entity.values.set(i, decodeTravelControls(entity.values.get(i)));
 			}
@@ -825,7 +825,7 @@ public class PreprocessStrings {
 			}
 			entity.domain = domain;
 		} else if (entity.name.equalsIgnoreCase("Differential_Type")) {
-			entity = replaceString(entity, "", "None or Unspecified");
+			entity = replaceString(entity, "?", "None or Unspecified");
 			for(int i = 0; i < entity.values.size(); i++) {
 				entity.values.set(i, decodeDifferentialType(entity.values.get(i)));
 			}
@@ -835,7 +835,7 @@ public class PreprocessStrings {
 			}
 			entity.domain = domain;
 		} else if (entity.name.equalsIgnoreCase("Steering_Controls")) {
-			entity = replaceString(entity, "", "None or Unspecified");
+			entity = replaceString(entity, "?", "None or Unspecified");
 			for(int i = 0; i < entity.values.size(); i++) {
 				entity.values.set(i, decodeSteeringControl(entity.values.get(i)));
 			}
@@ -861,7 +861,7 @@ public class PreprocessStrings {
 		}
 		entity = replaceMissingValues(entity);
 		if (entity.name.equalsIgnoreCase("ProductSize")) {
-			entity = replaceString(entity, "", "None or Unspecified");
+			entity = replaceString(entity, "?", "None or Unspecified");
 			for(int i = 0; i < entity.values.size(); i++) {
 				entity.values.set(i, decodeProductSize(entity.values.get(i)));
 			}
@@ -887,7 +887,7 @@ public class PreprocessStrings {
 		}
 		entity = replaceMissingValues(entity);
 		if (entity.name.equalsIgnoreCase("ProductSize")) {
-			entity = replaceString(entity, "", "None or Unspecified");
+			entity = replaceString(entity, "?", "None or Unspecified");
 			for(int i = 0; i < entity.values.size(); i++) {
 				entity.values.set(i, decodeProductSize(entity.values.get(i)));
 			}
@@ -902,7 +902,7 @@ public class PreprocessStrings {
 
 	public static Entities replaceMissingValuesSSL(Entities entity) {
 		if (entity.name.equalsIgnoreCase("fiProductClassDesc")) {
-			entity = replaceString(entity, "", "Skid Steer Loader - Unidentified");
+			entity = replaceString(entity, "?", "Skid Steer Loader - Unidentified");
 			for(int i = 0; i < entity.values.size(); i++) {
 				entity.values.set(i, decodeProductClassSSL(entity.values.get(i)));
 			}
@@ -914,7 +914,7 @@ public class PreprocessStrings {
 		} 
 		entity = replaceMissingValues(entity);
 		if (entity.name.equalsIgnoreCase("ProductSize")) {
-			entity = replaceString(entity, "", "None or Unspecified");
+			entity = replaceString(entity, "?", "None or Unspecified");
 			for(int i = 0; i < entity.values.size(); i++) {
 				entity.values.set(i, decodeProductSize(entity.values.get(i)));
 			}
@@ -929,7 +929,7 @@ public class PreprocessStrings {
 
 	public static Entities replaceMissingValuesTEX(Entities entity) {
 		if (entity.name.equalsIgnoreCase("fiProductClassDesc")) {
-			entity = replaceString(entity, "", "Skid Steer Loader - Unidentified");
+			entity = replaceString(entity, "?", "Skid Steer Loader - Unidentified");
 			entity = replaceString(entity, "Track - Unidentified (Compact Construction)", "Skid Steer Loader - Unidentified");
 			entity = replaceString(entity, "Track - 4.0 to 6.0 Metric Tons", "Track - 5.0 to 6.0 Metric Tons");
 			for(int i = 0; i < entity.values.size(); i++) {
@@ -943,7 +943,7 @@ public class PreprocessStrings {
 		} 
 		entity = replaceMissingValues(entity);
 		if (entity.name.equalsIgnoreCase("ProductSize")) {
-			entity = replaceString(entity, "", "None or Unspecified");
+			entity = replaceString(entity, "?", "None or Unspecified");
 			for(int i = 0; i < entity.values.size(); i++) {
 				entity.values.set(i, decodeProductSizeTEX(entity.values.get(i)));
 			}
@@ -969,7 +969,7 @@ public class PreprocessStrings {
 		}
 		entity = replaceMissingValues(entity);
 		if (entity.name.equalsIgnoreCase("ProductSize")) {
-			entity = replaceString(entity, "", "None or Unspecified");
+			entity = replaceString(entity, "?", "None or Unspecified");
 			for(int i = 0; i < entity.values.size(); i++) {
 				entity.values.set(i, decodeProductSize(entity.values.get(i)));
 			}
@@ -995,7 +995,7 @@ public class PreprocessStrings {
 		}
 		entity = replaceMissingValues(entity);
 		if (entity.name.equalsIgnoreCase("ProductSize")) {
-			entity = replaceString(entity, "", "None or Unspecified");
+			entity = replaceString(entity, "?", "None or Unspecified");
 			for(int i = 0; i < entity.values.size(); i++) {
 				entity.values.set(i, decodeProductSize(entity.values.get(i)));
 			}
