@@ -38,7 +38,7 @@ public class Weka {
 			}
 			isTrainingSet.add(iExample);
 		}
-		isTrainingSet.setClassIndex(1);
+		isTrainingSet.setClassIndex(0);
 		Classifier cModel = (Classifier) new NaiveBayes();
 		try {
 			cModel.buildClassifier(isTrainingSet);

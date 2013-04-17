@@ -14,21 +14,21 @@ public class Groups {
 		 documents = new ArrayList<>();
 		 
 		 reader = new CSVReader(new FileReader("train/Train_BL.csv"));
-		 documents.add(new LoadDocument(reader, "BL"));
+		 documents.add(new LoadDocument(reader, "BL", Constants.selected));
 		 
 		 reader = new CSVReader(new FileReader("train/Train_MG.csv"));
-		 documents.add(new LoadDocument(reader, "MG"));
+		 documents.add(new LoadDocument(reader, "MG",Constants.selected));
 		 
 		 reader = new CSVReader(new FileReader("train/Train_SSL.csv"));
-		 documents.add(new LoadDocument(reader, "SSL"));
+		 documents.add(new LoadDocument(reader, "SSL",Constants.selected));
 		 
 		 reader = new CSVReader(new FileReader("train/Train_TEX.csv"));
-		 documents.add(new LoadDocument(reader, "TEX"));
+		 documents.add(new LoadDocument(reader, "TEX",Constants.selected));
 		 
 		 reader = new CSVReader(new FileReader("train/Train_TTT.csv"));
-		 documents.add(new LoadDocument(reader, "TTT"));
+		 documents.add(new LoadDocument(reader, "TTT",Constants.selected));
 		 
 		 reader = new CSVReader(new FileReader("train/Train_WL.csv"));
-		 documents.add(new LoadDocument(reader, "WL"));
+		 documents.add(new LoadDocument(reader, "WL",Constants.selected));
 	}
 }

@@ -2,6 +2,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import au.com.bytecode.opencsv.CSVReader;
 
@@ -11,7 +12,7 @@ public class LoadDocument {
 	
 	public ArrayList<Entities> entities;
 	
-	LoadDocument (CSVReader reader, String classStr)
+	LoadDocument (CSVReader reader, String classStr, String []constant)
 	{
 		String [] nextLine;
 		entities = new ArrayList<>();
@@ -20,17 +21,25 @@ public class LoadDocument {
 	    	nextLine = reader.readNext();
 			for (int i = 0 ; i< nextLine.length; i++)
 	    	{
-	    		entities.add(new Entities(nextLine[i]));
+				if (Arrays.asList(constant).contains(Integer.toString(i)))
+				{
+					entities.add(new Entities(nextLine[i]));
+				}
 	    	}
 	    	
 	    	while ((nextLine = reader.readNext()) != null) {
+	    		int j = 0;
 				for (int i = 0 ; i< nextLine.length; i++)
 		    	{
+					if (Arrays.asList(constant).contains(Integer.toString(i)))
+					{
 					String s = new String(nextLine[i]);
 					if (s.length() == 0)
 						s = "?";
-					entities.get(i).domain.add(s);
-					entities.get(i).values.add(s);
+					entities.get(j).domain.add(s);
+					entities.get(j).values.add(s);
+					j++;
+					}
 		    	}
 			}
 		} catch (IOException e) {
